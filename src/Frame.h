@@ -30,8 +30,6 @@ enum IDS {
 	MUL_BTN_ID,
 	DIV_BTN_ID,
 	POW_BTN_ID,
-	ROOT_BTN_ID,
 	MOD_BTN_ID,
-	EQ_BTN_ID,
 	LOG_BOX_ID
 };

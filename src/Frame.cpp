@@ -73,6 +73,7 @@ bool Frame::parseInputs() {
 		wxMessageBox("Bad 2nd number!", "Bad number", wxICON_WARNING | wxOK);
 		return false;
 	}
+
 	return true;
 }
 

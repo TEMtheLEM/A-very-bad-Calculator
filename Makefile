@@ -12,8 +12,8 @@ help:
 
 
 main:
-	$(CC) $(CFLAGS) -o bin/main src/*.cpp $(LFLAGS) $(IFLAGS)
+	$(CC) $(CFLAGS) -o bin/Calculator src/*.cpp $(LFLAGS) $(IFLAGS)
 
 
 test:
-	bin/main
+	bin/Calculator
