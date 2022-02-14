@@ -19,7 +19,6 @@ Frame::Frame() : wxFrame(NULL, wxID_ANY, "A very bad GUI Calculator", wxPoint(30
 	wxButton *div_btn = new wxButton(this, DIV_BTN_ID, "/");
 	wxButton *pow_btn = new wxButton(this, POW_BTN_ID, "^");
 	wxButton *mod_btn = new wxButton(this, MOD_BTN_ID, "MOD");
-	wxButton *eq_btn = new wxButton(this, EQ_BTN_ID, "=");
 
 	// Set button fonts
 	wxFont btn_font(24, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, true);
@@ -29,7 +28,6 @@ Frame::Frame() : wxFrame(NULL, wxID_ANY, "A very bad GUI Calculator", wxPoint(30
 	div_btn->SetFont(btn_font);
 	pow_btn->SetFont(btn_font);
 	mod_btn->SetFont(btn_font);
-	eq_btn->SetFont(btn_font);
 
 	// Log output
 	log_box = new wxListBox(this, LOG_BOX_ID, wxDefaultPosition);
