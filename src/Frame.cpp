@@ -68,7 +68,7 @@ bool Frame::parseInputs() {
 		std::string err_msg = "The following bad number(s) were given:\n";
 		for (const short &ell : failed)
 			err_msg += "\t- Number " + std::to_string(ell) + '\n';
-		wxPrintf("%d\n", wxMessageBox(wxString(err_msg), "Bad number(s) given.", wxICON_WARNING | wxOK));
+		wxMessageBox(err_msg, "Bad number(s) given.", wxICON_WARNING | wxOK);
 		return false;
 	}
 
