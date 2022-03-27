@@ -9,6 +9,7 @@ help:
 	#   help:  Display this information.
 	#   main:  Make main executable.
 	#   test:  Run main executable.
+	#   strip: Strip main executable.
 
 
 main:
@@ -17,3 +18,7 @@ main:
 
 test:
 	bin/Calculator
+
+
+strip:
+	strip bin/Calculator
