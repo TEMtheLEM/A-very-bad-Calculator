@@ -47,12 +47,7 @@ private:
 
 	bool parseInputs();
 
-	void addBtnClicked(wxCommandEvent &event);
-	void subBtnClicked(wxCommandEvent &event);
-	void mulBtnClicked(wxCommandEvent &event);
-	void divBtnClicked(wxCommandEvent &event);
-	void powBtnClicked(wxCommandEvent &event);
-	void modBtnClicked(wxCommandEvent &event);
+	void onOppBtnClick(wxCommandEvent &event);
 public:
 	Frame();
 	~Frame();

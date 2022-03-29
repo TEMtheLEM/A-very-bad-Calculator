@@ -1,7 +1,8 @@
 CC=ccache clang++
-CFLAGS=-O3 -Os -Wall
+CFLAGS=-O3 -Os
 LFLAGS=`wx-config --libs`
 IFLAGS=`wx-config --cflags`
+WARNS=-Wall -Werror
 
 
 help:
@@ -13,7 +14,7 @@ help:
 
 
 main:
-	$(CC) $(CFLAGS) -o bin/Calculator src/*.cpp $(LFLAGS) $(IFLAGS)
+	$(CC) $(CFLAGS) $(WARNS) -o bin/Calculator src/*.cpp $(LFLAGS) $(IFLAGS)
 
 
 test:
