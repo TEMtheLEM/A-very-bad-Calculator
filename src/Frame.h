@@ -19,8 +19,11 @@
 
 
 #pragma once
-#include <wx/wx.h>
 
+#include <wx/wxprec.h>
+#ifndef WX_PRECOMP
+	#include <wx/wx.h>
+#endif
 
 #define SIZE_MULTIPLIER   4
 #define BTN_AMOUNT        6
