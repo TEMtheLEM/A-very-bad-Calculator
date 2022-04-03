@@ -55,7 +55,7 @@ Frame::Frame() : wxFrame(NULL, wxID_ANY, "A very bad GUI Calculator", wxPoint(60
 	// Operational buttons.
 	wxGridSizer *btn_grid = new wxGridSizer(2, 3, wxSize(0, 0));
 	for (int i = 0; i < BTN_AMOUNT; i++) {
-		wxButton *btn = new wxButton(this, 10000+i, BTN_LABELS[i]);
+		wxButton *btn = new wxButton(this, ADD_BTN_ID+i, BTN_LABELS[i]);
 		btn->SetFont(APP_FONT);
 		btn_grid->Add(btn, 1, wxEXPAND | wxALL, SIZE_MULTIPLIER);
 	}
@@ -88,7 +88,7 @@ bool Frame::parseInputs() {
 			failed.push_back(i+1);
 	}
 
-	// True if at least 1 of the inputs were bad.
+	// True if at least 1 of the inputs were bad, so display a warning informing the user.
 	if (failed.size()) {
 		std::string err_msg = "The following bad number(s) were given:\n";
 		for (const short &ell : failed)
@@ -107,10 +107,10 @@ void Frame::onOppBtnClick(wxCommandEvent &event) {
 		return;
 
 	double res;
-	int ID = event.GetId();
+	int id = event.GetId();
 
 	// GetId() will return the ID of the button pressed. This is much better than the previous solution.
-	switch (ID) {
+	switch (id) {
 		case ADD_BTN_ID:
 			res = nums[0] + nums[1];
 			break;
@@ -127,12 +127,11 @@ void Frame::onOppBtnClick(wxCommandEvent &event) {
 			res = pow(nums[0], nums[1]);
 			break;
 		case MOD_BTN_ID:
-			// FIXME: res is a double being assigned to long.
-			//   Just a small thing; it isn't critical (yet).
-			res = (long) nums[0] % (long) nums[1];
+			res = (double)((long) nums[0] % (long) nums[1]);
 			break;
 		default:
-			wxMessageBox(wxString::Format("ERR; A operational button was pressed, but the event handler could not determine which button was pressed.\n\nID given was: %d", ID),
+			wxMessageBox(wxString::Format("ERR; A operational button was pressed, but the event handler could not determine which button was pressed.\
+			             \nThe program will now exit because of this bug. Please report an issue on the GitHub.\n\nThe un-identifiable ID that was given is: %d", id),
 			             "An error has occoured in the button event handler.",
 			             wxICON_ERROR);
 			exit(1);
