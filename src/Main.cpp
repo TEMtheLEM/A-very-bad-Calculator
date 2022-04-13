@@ -20,11 +20,30 @@
 
 #include "Main.h"
 #include "Frame.h"
+#include <string>
 
+
+std::string Main::GetAppDirLoc() {
+	// If, for whatever reason, there is no base command (i.e /path/to/Calculator)
+	if (!argc) {
+		wxPrintf("No command available.\n");
+		exit(2);
+	}
+
+	// Get the current working directory.
+	std::string cmd(argv[0]),
+	            base = cmd.substr(0, cmd.find_last_of("/"));
+
+	return base + "/../";
+}
 
 bool Main::OnInit() {
+	// Get the current working directory.
+	std::string app_dir = GetAppDirLoc();
+
 	Frame *frame = new Frame();
 	frame->SetMinSize(wxSize(400, 400));
+	frame->SetIcon(wxIcon(wxString::Format("%s/res/img/icon.png", app_dir), wxBITMAP_TYPE_PNG));
 	frame->Show();
 
 	return true;

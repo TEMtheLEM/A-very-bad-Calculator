@@ -28,6 +28,7 @@
 class Main : public wxApp {
 public:
 	virtual bool OnInit();
+	std::string GetAppDirLoc();
 };
 
 
