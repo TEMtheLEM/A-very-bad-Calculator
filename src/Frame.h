@@ -1,6 +1,6 @@
 /**
  * Frame.h - Template file for application frame.
- * Copyright (C) 2022  Connor Inch
+ * Copyright (C) 2022  Connor Inch  <conninch@protonmail.com>
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,9 +32,6 @@
 
 class Frame : public wxFrame {
 private:
-	wxListBox *log_box;
-
-	const std::string BTN_LABELS[BTN_AMOUNT] = { "+", "-", "x", "/", "^", "MOD" };
 	enum BTN_IDS {
 		ADD_BTN_ID = 10000,
 		SUB_BTN_ID,
@@ -44,12 +41,12 @@ private:
 		MOD_BTN_ID
 	};
 
+	const std::string BTN_LABELS[BTN_AMOUNT] = { "+", "-", "x", "/", "^", "MOD" };
+	wxListBox *log_box;
 	wxTextCtrl *txt_in[2];
-
 	double nums[2];
 
 	bool parseInputs();
-
 	void onOppBtnClick(wxCommandEvent &event);
 public:
 	Frame();

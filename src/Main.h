@@ -1,6 +1,6 @@
 /**
  * Main.h - Template (header) for Main.cpp
- * Copyright (C) 2022  Connor Inch
+ * Copyright (C) 2022  Connor Inch  <conninch@protonmail.com>
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

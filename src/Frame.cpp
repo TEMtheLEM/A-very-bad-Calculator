@@ -1,6 +1,6 @@
 /**
  * Frame.cpp - Application frame & backend code.
- * Copyright (C) 2022  Connor Inch
+ * Copyright (C) 2022  Connor Inch  <conninch@protonmail.com>
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ EVT_BUTTON(MUL_BTN_ID, Frame::onOppBtnClick)
 EVT_BUTTON(DIV_BTN_ID, Frame::onOppBtnClick)
 EVT_BUTTON(POW_BTN_ID, Frame::onOppBtnClick)
 EVT_BUTTON(MOD_BTN_ID, Frame::onOppBtnClick)
-wxEND_EVENT_TABLE()
+wxEND_EVENT_TABLE();
 
 
 Frame::Frame() : wxFrame(NULL, wxID_ANY, "A very bad GUI Calculator", wxPoint(60, 180), wxSize(800, 500)) {

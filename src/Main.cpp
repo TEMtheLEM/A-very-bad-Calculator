@@ -1,6 +1,6 @@
 /**
  * Main.cpp - Application init code.
- * Copyright (C) 2022  Connor Inch
+ * Copyright (C) 2022  Connor Inch  <conninch@protonmail.com>
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
