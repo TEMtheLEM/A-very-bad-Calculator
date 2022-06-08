@@ -10,6 +10,6 @@ The library used is [wxWidgets 3.0.5](https://www.wxwidgets.org/), which you can
 
 However, depending on the operating system you have, there may (and likely will) be much easier ways to get the library on your system.<br>
 If you're on a Linux system, for example, I recommend that you see if your package manager has the library available.<br>
-The team has repositories for [Debian/Ubuntu](https://docs.codelite.org/wxWidgets/repo315/#ubuntu-and-debian) and [Fedora/openSUSE](https://docs.codelite.org/wxWidgets/repo315/#fedora-and-opensuse) users. Arch has it as well; just run `pacman -S wxgtk3 wxgtk-common`.
+The team has repositories for [Debian/Ubuntu](https://docs.codelite.org/wxWidgets/repo315/#ubuntu-and-debian) and [Fedora/openSUSE](https://docs.codelite.org/wxWidgets/repo315/#fedora-and-opensuse) users. Arch has it as well; just run `pacman -S wxgtk3 wxgtk-common webkit2gtk`.
 
 Finally, use this in your own projects OR even as a calculator on your own PC, if you so wish (you mad individual); I really don't care as long as you follow the license. Thanks.
