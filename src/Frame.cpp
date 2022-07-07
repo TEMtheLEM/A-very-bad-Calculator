@@ -22,6 +22,7 @@
 #include <vector>
 
 
+// Bind btn handler to btns.
 wxBEGIN_EVENT_TABLE(Frame, wxFrame)
 EVT_BUTTON(ADD_BTN_ID, Frame::onOppBtnClick)
 EVT_BUTTON(SUB_BTN_ID, Frame::onOppBtnClick)
@@ -33,7 +34,7 @@ wxEND_EVENT_TABLE();
 
 
 Frame::Frame() : wxFrame(NULL, wxID_ANY, "A very bad GUI Calculator", wxPoint(60, 180), wxSize(800, 500)) {
-	// Master grid (takes up entire application)
+	// Master grid (takes up entire application).
 	wxGridSizer *full_grid = new wxGridSizer(2, 1, wxSize(0, 0));
 
 	// Log output
@@ -82,13 +83,16 @@ bool Frame::parseInputs() {
 	std::vector<short> failed {};
 
 	for (int i = 0; i < 2; i++) {
-		// Get the value of each text box; then try to convert it to a double.
-		// If the conversion failes, remember the bad input.
+		/** Get the value of each text box; then try to convert it to a double.
+		 *  If the conversion failes, remember the bad input.
+		 */
 		if (!txt_in[i]->GetValue().ToDouble(&nums[i]))
 			failed.push_back(i+1);
 	}
 
-	// True if at least 1 of the inputs were bad, so display a warning informing the user.
+	/** True if at least 1 of the inputs were bad,
+	 *  so display a warning informing the user.
+	 */
 	if (failed.size()) {
 		std::string err_msg = "The following bad number(s) were given:\n";
 		for (const short &ell : failed)
@@ -102,14 +106,16 @@ bool Frame::parseInputs() {
 }
 
 void Frame::onOppBtnClick(wxCommandEvent &event) {
-	// If parseInputs() returns false, an invalid input was given. Thus, exit the function early.
+	/** If parseInputs() returns false, an invalid input
+	 *  was given. Thus, exit the function early.
+	 */
 	if (!parseInputs())
 		return;
 
 	double res;
 	int id = event.GetId();
 
-	// GetId() will return the ID of the button pressed. This is much better than the previous solution.
+	// GetId() will return the ID of the button pressed.
 	switch (id) {
 		case ADD_BTN_ID:
 			res = nums[0] + nums[1];
@@ -130,10 +136,13 @@ void Frame::onOppBtnClick(wxCommandEvent &event) {
 			res = (double)((long) nums[0] % (long) nums[1]);
 			break;
 		default:
-			wxMessageBox(wxString::Format("ERR; A operational button was pressed, but the event handler could not determine which button was pressed.\
-			             \nThe program will now exit because of this bug. Please report an issue on the GitHub.\n\nThe un-identifiable ID that was given is: %d", id),
-			             "An error has occoured in the button event handler.",
-			             wxICON_ERROR);
+			wxMessageBox(
+			    wxString::Format(
+			        "ERR; A operational button was pressed, but the event handler could not determine which button was pressed.\
+			        \nThe program will now exit because of this bug. Please report an issue on the GitHub.\
+			        \n\nThe un-identifiable ID that was given is: %d", id),
+			    "An error has occoured in the button event handler.",
+			    wxICON_ERROR);
 			exit(1);
 	}
 

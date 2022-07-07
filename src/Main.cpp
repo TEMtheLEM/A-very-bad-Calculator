@@ -24,7 +24,7 @@
 
 
 std::string Main::GetAppDirLoc() {
-	// If, for whatever reason, there is no base command (i.e /path/to/Calculator)
+	// If, for whatever reason, there is no base command (i.e /path/to/Calculator).
 	if (!argc) {
 		wxPrintf("No command available.\n");
 		exit(2);

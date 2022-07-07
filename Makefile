@@ -7,13 +7,13 @@ WARNS=-Wall -Werror
 
 help:
 	# Options are;
-	#   help:  Display this information.
-	#   main:  Make main executable.
-	#   test:  Run main executable.
-	#   strip: Strip main executable.
+	#   help:     Display this information.
+	#   compile:  Compile program into an executable.
+	#   test:     Run main executable.
+	#   strip:    Strip main executable.
 
 
-main:
+compile:
 	$(CC) $(CFLAGS) $(WARNS) -o bin/Calculator src/*.cpp $(LFLAGS) $(IFLAGS)
 
 

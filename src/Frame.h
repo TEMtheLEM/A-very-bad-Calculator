@@ -25,9 +25,9 @@
 	#include <wx/wx.h>
 #endif
 
-#define SIZE_MULTIPLIER   4
-#define BTN_AMOUNT        6
-#define APP_FONT          wxFont(24, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, true)
+#define   SIZE_MULTIPLIER   4
+#define   BTN_AMOUNT        6
+#define   APP_FONT          wxFont(24, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, true)
 
 
 class Frame : public wxFrame {
