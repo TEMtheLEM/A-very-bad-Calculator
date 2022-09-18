@@ -49,7 +49,7 @@ Frame::Frame() : wxFrame(NULL, wxID_ANY, "A very bad GUI Calculator", wxPoint(60
 	for (int i = 0; i < 2; i++) {
 		wxTextCtrl *num_in = new wxTextCtrl(this, wxID_ANY, "");
 		num_in->SetFont(APP_FONT);
-		num_inputs->Add(num_in, 1, wxEXPAND | wxALIGN_CENTER | wxALL, SIZE_MULTIPLIER);
+		num_inputs->Add(num_in, 1, wxEXPAND | wxALL, SIZE_MULTIPLIER);
 		txt_in[i] = num_in;
 	}
 
