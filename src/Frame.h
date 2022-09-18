@@ -22,7 +22,7 @@
 
 #include <wx/wxprec.h>
 #ifndef WX_PRECOMP
-	#include <wx/wx.h>
+    #include <wx/wx.h>
 #endif
 
 #define   SIZE_MULTIPLIER   4
@@ -32,25 +32,25 @@
 
 class Frame : public wxFrame {
 private:
-	enum BTN_IDS {
-		ADD_BTN_ID = 10000,
-		SUB_BTN_ID,
-		MUL_BTN_ID,
-		DIV_BTN_ID,
-		POW_BTN_ID,
-		MOD_BTN_ID
-	};
+    enum BTN_IDS {
+        ADD_BTN_ID = 10000,
+        SUB_BTN_ID,
+        MUL_BTN_ID,
+        DIV_BTN_ID,
+        POW_BTN_ID,
+        MOD_BTN_ID
+    };
 
-	const std::string BTN_LABELS[BTN_AMOUNT] = { "+", "-", "x", "/", "^", "MOD" };
-	wxListBox *log_box;
-	wxTextCtrl *txt_in[2];
-	double nums[2];
+    const std::string BTN_LABELS[BTN_AMOUNT] = { "+", "-", "x", "/", "^", "MOD" };
+    wxListBox *log_box;
+    wxTextCtrl *txt_in[2];
+    double nums[2];
 
-	bool parseInputs();
-	void onOppBtnClick(wxCommandEvent &event);
+    bool parseInputs();
+    void onOppBtnClick(wxCommandEvent &event);
 public:
-	Frame();
-	~Frame();
+    Frame();
+    ~Frame();
 
-	wxDECLARE_EVENT_TABLE();
+    wxDECLARE_EVENT_TABLE();
 };

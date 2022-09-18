@@ -22,13 +22,13 @@
 
 #include <wx/wxprec.h>
 #ifndef WX_PRECOMP
-	#include <wx/wx.h>
+    #include <wx/wx.h>
 #endif
 
 class Main : public wxApp {
 public:
-	virtual bool OnInit();
-	std::string GetAppDirLoc();
+    virtual bool OnInit();
+    std::string GetAppDirLoc();
 };
 
 
